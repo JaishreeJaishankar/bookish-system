@@ -34,7 +34,7 @@ variable "service_desired_count" {
 variable "container_port" {
   type        = number
   description = "The port the application listens on"
-  default     = 8080
+  default     = 5000
 }
 
 variable "domain_name" {

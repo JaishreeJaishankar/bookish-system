@@ -15,7 +15,7 @@ resource "aws_lb" "this" {
 
 resource "aws_alb_target_group" "this" {
   name        = "${var.name}-tg-${var.stage}"
-  port        = 80
+  port        = 5000
   protocol    = "HTTP"
   vpc_id      = module.vpc.vpc_id
   target_type = "ip"
