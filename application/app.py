@@ -8,11 +8,6 @@ import boto3
 
 app = Flask(__name__)
 
-app.config["MYSQL_DATABASE_HOST"] = os.environ.get("RDS_HOSTNAME") or self.host;
-		app.config["MYSQL_DATABASE_USER"] = os.environ.get("RDS_USERNAME") or self.user;
-		app.config["MYSQL_DATABASE_PASSWORD"] = os.environ.get("RDS_PASSWORD") or self.password;
-		app.config["MYSQL_DATABASE_DB"] = os.environ.get("RDS_DBNAME") or self.db;
-
 DBHOST = os.environ.get("RDS_HOSTNAME") or "localhost"
 DBUSER = os.environ.get("RDS_USERNAME") or "root"
 DBPWD = os.environ.get("RDS_PASSWORD") or "password"
