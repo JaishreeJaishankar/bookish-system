@@ -7,7 +7,7 @@ import boto3
 
 
 app = Flask(__name__)
-
+ 
 DBHOST = os.environ.get("RDS_HOSTNAME") or "localhost"
 DBUSER = os.environ.get("RDS_USERNAME") or "root"
 DBPWD = os.environ.get("RDS_PASSWORD") or "password"
@@ -29,8 +29,9 @@ db_conn = connections.Connection(
 output = {}
 table = 'employee';
 
-default_bucket = "clo835images17"
+default_bucket = "skillsjaishree"
 default_image = "projectbg.jpg"
+image = "https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_960_720.jpg"
 
 @app.route("/download", methods=['GET', 'POST'])
 def download(bucket = default_bucket, imageName = default_image):
@@ -112,6 +113,6 @@ def FetchData():
                            lname=output["last_name"], interest=output["primary_skills"], location=output["location"], image=image, group_name=GRPNAME)
 
 if __name__ == '__main__':
-    image = download(BUCKETNAME, BGIMG)
-    print(image)
-    app.run(host='0.0.0.0',port=81,debug=True)
+    # image = download(BUCKETNAME, BGIMG)
+    # print(image)
+    app.run(host='0.0.0.0',port=80,debug=True)
