@@ -6,8 +6,8 @@ resource "aws_db_instance" "this" {
   engine_version         = "5.7"
   instance_class         = "db.t3.micro"
   parameter_group_name   = "default.mysql5.7"
-  db_name                = "lms"
-  username               = "lms"
+  db_name                = "employees"
+  username               = "root"
   password               = random_password.this.result
   db_subnet_group_name   = aws_db_subnet_group.this.name
   vpc_security_group_ids = [module.rds_sg.id]

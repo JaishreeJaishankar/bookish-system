@@ -8,13 +8,18 @@ import boto3
 
 app = Flask(__name__)
 
-DBHOST = os.environ.get("DBHOST") or "localhost"
-DBUSER = os.environ.get("DBUSER") or "root"
-DBPWD = os.environ.get("DBPWD") or "password"
-DATABASE = os.environ.get("DATABASE") or "employees"
+app.config["MYSQL_DATABASE_HOST"] = os.environ.get("RDS_HOSTNAME") or self.host;
+		app.config["MYSQL_DATABASE_USER"] = os.environ.get("RDS_USERNAME") or self.user;
+		app.config["MYSQL_DATABASE_PASSWORD"] = os.environ.get("RDS_PASSWORD") or self.password;
+		app.config["MYSQL_DATABASE_DB"] = os.environ.get("RDS_DBNAME") or self.db;
+
+DBHOST = os.environ.get("RDS_HOSTNAME") or "localhost"
+DBUSER = os.environ.get("RDS_USERNAME") or "root"
+DBPWD = os.environ.get("RDS_PASSWORD") or "password"
+DATABASE = os.environ.get("RDS_DBNAME") or "employees"
 BGIMG = os.environ.get("BGIMG") or "projectbg.jpg"
-BUCKETNAME = os.environ.get("BUCKETNAME") or "clo835images17"
-GRPNAME = os.environ.get("GRPNAME") or "Group 17"
+BUCKETNAME = os.environ.get("BUCKETNAME") or "skillsjaishree"
+GRPNAME = os.environ.get("GRPNAME") or "SkillsOntario-Seneca"
 DBPORT = int(os.environ.get("DBPORT", "3306"))
 
 # Create a connection to the MySQL database
