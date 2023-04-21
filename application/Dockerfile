@@ -12,4 +12,4 @@ ENV FLASK_APP=app.py
 ENV FLASK_ENV=development
 EXPOSE 8080
 ENTRYPOINT [ "flask" ]
-CMD [ "run" ]
+CMD [ "run" , "--host=0.0.0.0"]
