@@ -21,8 +21,8 @@ module "ecs_service_sg" {
         {
           key         = "HTTPALB"
           type        = "ingress"
-          from_port   = 5000
-          to_port     = 5000
+          from_port   = 8080
+          to_port     = 8080
           protocol    = "tcp"
           description = "Allow HTTP from ALB"
         }
